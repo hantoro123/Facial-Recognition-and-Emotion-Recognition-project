@@ -1,0 +1,6 @@
+train: /home/KDT-admin/work/data6_yolo_1000_300_640/train/images
+val: /home/KDT-admin/work/data6_yolo_1000_300_640/validation/images
+test: /home/KDT-admin/work/data6_yolo_1000_300_640/test/images
+
+nc: 7
+names: ["anger", "normal", "happy", "embarrass", "anxiety", "pain", "sad"]

@@ -192,8 +192,47 @@ model.train(data='yaml_file_path')
 ### Yolov8 - detection
 
 - *Live analysis of interviews*
+
+|***emotion***|anger|anxiety|embarrass|happy|normal|pain|sad|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|***Type***|Negative|Negative|Negative|Positive|Positive|Negative|Negative|
+
+### How did you score your emotions?
+
+```python
+def emotion_score(score:50.0,emotion):
+  '''
+  Functions that give scores for each emotion
+
+  agrs - score : float=50.0
+       - emotion : list
+  '''
+  score = score
+  good, bad = 0, 0
+  threshold = 0.1 # initial threshold
+
+  good += (threshold * (emotion.count('happy')) + threshold * (emotion.count('normal')))
+  bad -=  (threshold * (emotion.count('anger')) + threshold * (emotion.count('embarrass')) + threshold * (emotion.count('anxiety')) + threshold * (emotion.count('pain')) + threshold * (emotion.count('sad')))
+  print(emotion)
+
+  # initial score range
+  if score+good+bad > 70:
+      print('good')
+  elif score+good+bad > 40:
+      print('normal')
+  else:
+      print('bad')
+
+  print(score+good+bad)
+  return score+good+bad
+```
+
+<br>
+<p align="center" style="font-size:20px">
+  Live Emotion Detection
+</p>
 <p align="center">
-<img src="etc/emotion.png" alt="Live anaylsis" style="width:400px;"/>
+  <img src="etc/emotion.png" alt="Live anaylsis" style="width:400px;"/>
 </p>
 
 ## Create Question
@@ -205,6 +244,17 @@ model.train(data='yaml_file_path')
 <img src="etc/gpt.png" alt="GPT3.5" style="width:400px;"/>
 </p>
 
+### Prompts that match our needs
+```python
+SYSTEM_ANSWER_PROMPT = """You are an expert on generating 3 interview questions in Korean based on the provided 자기소개서 (self-introduction), a helpful bot who provides polished and professional questions which are commonly asked interview questions.
+Your task is to understand the self-introduction provided by the user and then enhance the interview questions.
+Also don't use heavy or complex words that are not typically used in human conversations.
+"""
+```
+<br>
+<p align="center" style="font-size:20px">
+  Self-Introduction based questions 
+</p>
 <p align="center">
 <img src="etc/create_question.png" alt="Live anaylsis" style="width:400px;"/>
 </p>
@@ -212,7 +262,16 @@ model.train(data='yaml_file_path')
 ## Speech to Text & Evaluation Answer
 
 ### GPT-3.5
+### OpenAI-Whisper
+<p align="center">
+  <img src="etc/whisper.png" alt="Live anaylsis" style="width:500px;"/>
+</p>
 
+<p align="center" style="font-size:20px">
+  Answers to Questions 
+</p>
+
+<br>
 <p align="center">
   <img src="etc/eval_answer2.png" alt="Live anaylsis" style="width:700px;"/>
 </p>

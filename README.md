@@ -311,5 +311,5 @@ Also don't use heavy or complex words that are not typically used in human conve
 </p>
 
 # Result
-
+![confusion_matrix](https://github.com/hantoro123/Facial-Recognition-and-Emotion-Recognition-project/assets/74577680/3cb0419a-7d22-44e9-a206-fc487f61ba67)
 # Reference

@@ -218,7 +218,13 @@ def emotion_score(score:50.0,emotion):
     good += (threshold * (emotion.count('happy')) + threshold * (emotion.count('normal')))
     bad -=  (threshold * (emotion.count('anger')) + threshold * (emotion.count('embarrass')) + threshold * (emotion.count('anxiety')) + threshold * (emotion.count('pain')) + threshold * (emotion.count('sad')))
     print(emotion)
-    print(score+good+bad)
+    if score+good+bad > 70:
+        print('good')
+    elif score+good+bad > 40:
+        print('normal')
+    else:
+        print('bad')
+    # print(score+good+bad)
     return score+good+bad
 
 
@@ -308,12 +314,6 @@ def main():
                     cv2.putText(frame, classes[cls], org, font, fontScale, color, thickness)
                     video_stream.image(frame)
             
-            # # 웹캠 캡처 해제
-            # camera.release()
-            # cv2.destroyAllWindows()
-            # print(emotion)
-            # interview_score = emotion_score(emotion)
-            # st.write(interview_score)
     else:
         st.write('Stopped')
 

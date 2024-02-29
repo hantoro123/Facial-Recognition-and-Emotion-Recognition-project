@@ -19,6 +19,12 @@
 $ pip install -r requirements.txt
 ```
 
+- mathai.yaml
+```bash
+$ conda env create -f mathai.yaml
+$ conda activate mathai
+```
+
 ### Modularization of each model
 - `config` : Hyperparameter values required for each file
 - `dataset` : It's made into a transformed image folder format dataset

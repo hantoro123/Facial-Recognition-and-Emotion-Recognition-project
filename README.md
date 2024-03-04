@@ -319,14 +319,14 @@ Also don't use heavy or complex words that are not typically used in human conve
 # Result
 ![confusion_matrix](https://github.com/hantoro123/Facial-Recognition-and-Emotion-Recognition-project/assets/74577680/3cb0419a-7d22-44e9-a206-fc487f61ba67)
 
-|Model|accuracy|precision|recall|time(h)|
-|:---:|:---:|:---:|:---:|:---:|
-|VGG|0.4864|0.420|0.414|26|
-|ResNet|0.3563|0.28|0.298|27.2|
-|ResNeXt|0.4163|0.202|0.201|18.2|
-|ViT|0.3062|0.307|0.308|14.6|
-|Yolov8m-cls|0.69|0.63|0.62|approx 3|
-|Yolov8m|0.5725|0.68|0.74|approx 3|
+|Model|accuracy|precision|recall|f1_score|time(h)|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|VGG|0.4864|0.420|0.414|0.417|26|
+|ResNet|0.3563|0.28|0.298|0.289|27.2|
+|ResNeXt|0.4163|0.202|0.201|0.201|18.2|
+|ViT|0.3062|0.307|0.308|0.307|14.6|
+|Yolov8m-cls|0.69|0.63|0.62|0.625|approx 3|
+|Yolov8m|0.5725|0.68|0.74|0.709|approx 3|
 
 # Reference
 
